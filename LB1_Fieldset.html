@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Lab Task 1</title>
+    <style>
+        .center-container 
+        {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        fieldset 
+        {
+            border: 2px solid black;
+            display: block;
+            text-align: center;
+        }
+
+        table 
+        {
+            margin: auto;
+            font-size: 35px;
+        }
+
+        input[type="button"] 
+        {
+            display: block;
+            margin: auto;
+        }
+
+        legend  { padding: 0px 0px; }
+
+        .input-box 
+        {
+            display: flex;
+            align-items: center;
+            padding: 0px 20px;
+        }
+
+        .input-box img 
+        {
+            position: relative;
+            bottom: -2.5px;
+            left: -25px;
+            width: 20px;
+            cursor: pointer;
+        }
+
+    </style>
+</head>
+<body>
+    
+    <div class="center-container">
+        <fieldset>
+            <legend><h1>Login Page</h1></legend>
+            <h2>Username: <input type="text" placeholder="username" name="log_uname" id="user" size="30"></h2>
+            <hr>
+            <div class="input-box">
+                <h2>Password: <input type="password" placeholder="password" id="password" size="33"></h2>
+                <img src="eye-close.png" id="eyeicon">
+            </div>
+            <hr>
+            <input type="button" name="" value="Login"><br>
+        </fieldset>
+    </div>
+    <br>
+    <table border="2">
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Web_Sec</th>
+            <th>CN_Sec</th>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>ab</td>
+            <td rowspan="2">A</td>
+            <td rowspan="4">H</td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>abd</td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td>cd</td>
+            <td rowspan="2">B</td>
+        </tr>
+        <tr>
+            <td>5</td>
+            <td>ccd</td>
+        </tr>
+    </table>
+    <script>
+        let eyeicon = document.getElementById("eyeicon");
+        let password = document.getElementById("password");
+        eyeicon.onclick = function() 
+        {
+            if(password.type == "password") 
+            { 
+                eyeicon.src = "eye-open.png";
+                password.type = "text";
+            } 
+            else 
+            {
+                password.type = "password";
+                eyeicon.src = "eye-close.png";
+            }
+        }
+    </script>
+</body>
+</html>
